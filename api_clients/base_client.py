@@ -27,8 +27,24 @@ class BaseClient:
     def _put(self, endpoint, json=None, data=None, **kwargs):
         return self._request('PUT', endpoint, json=json, data=data, **kwargs)
 
+    def _patch(self, endpoint, json=None, data=None, **kwargs):
+        return self._request('PATCH', endpoint, json=json, data=data, **kwargs)
+
     def _delete(self, endpoint, **kwargs):
         return self._request('DELETE', endpoint, **kwargs)
 
     def close(self):
         self.session.close()
+
+    def call_api(self, method, endpoint, params= None, json= None, data= None, **kwargs):
+        match method: 
+            case 'GET': 
+                return self._get(endpoint, params,  **kwargs)
+            case 'POST': 
+                return self._post(endpoint, json=json, data=data, **kwargs)
+            case 'PUT':
+                return self._put(endpoint, json=json, data=data, **kwargs)
+            case 'PATCH':
+                return self._patch(endpoint, json=json, data=data, **kwargs)
+            case 'DELETE':
+                return self._delete(endpoint, **kwargs)
