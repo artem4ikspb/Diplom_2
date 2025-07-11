@@ -1,7 +1,3 @@
-# Создание пользователя:
-# создать уникального пользователя;
-# создать пользователя, который уже зарегистрирован;
-# создать пользователя и не заполнить одно из обязательных полей.
 import allure
 import pytest
 from api_clients.user_api_client import UserApiClient as UE
@@ -28,11 +24,11 @@ class TestUserRegistration:
     @pytest.mark.parametrize(
         'fields',
         [
-            ['fdsdfd908098','','fdsdfd908098@ya.ru'],
-            ['fdsdfd908098',None,'fdsdfd908098@ya.ru'],
-            ['','fdsdfd908098','fdsdfd908098@ya.ru'],
-            [None,'fdsdfd908098','fdsdfd908098@ya.ru'],
+            ['','fdsdfd908098','fdsdfd908098@yabgd.ru'],
+            ['fdsdfd908098','','fdsdfd908098@yabgd.ru'],
             ['fdsdfd908098','fdsdfd908098',''],
+            [None,'fdsdfd908098','fdsdfd908098@yabgd.ru'],
+            ['fdsdfd908098',None,'fdsdfd908098@yabgd.ru'],
             ['fdsdfd908098','fdsdfd908098',None]
         ]
     )

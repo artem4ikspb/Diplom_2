@@ -32,6 +32,15 @@ class UserApiClient(BaseClient):
         except JSONDecodeError:
             return resp.status_code, resp.text
         
+    @allure.step('Update user data')
+    def update_user(self, new_user_data: dict, token: str):
+        headers = {"Authorization": token}
+        resp = self.call_api(*UE.UPDATE_USER_DATA, json=new_user_data, headers=headers)
+        try:
+            return resp.status_code, resp.json()
+        except JSONDecodeError:
+            return resp.status_code, resp.text
+        
 
 
     @staticmethod

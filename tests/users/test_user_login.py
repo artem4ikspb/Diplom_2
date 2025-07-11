@@ -1,9 +1,4 @@
-# Логин пользователя:
-# логин под существующим пользователем,
-# логин с неверным логином и паролем.
-
 import allure
-import pytest
 from typing import Any,Dict,List
 from api_clients.user_api_client import UserApiClient
 

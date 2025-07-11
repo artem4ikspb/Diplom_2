@@ -1,6 +1,4 @@
 import pytest
-import data
-from api_clients.base_client import BaseClient
 from api_clients.user_api_client import UserApiClient as UE
 import data.test_data
 from data.url_endpoints import BASE_URL
@@ -12,7 +10,7 @@ def base_user_api_client():
     yield client
     client.close()
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def user_api_client_w_user():
     client = UE(BASE_URL)
     data =  Generator.name(), Generator.password(), Generator.email()
