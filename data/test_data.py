@@ -5,4 +5,6 @@ class TestUserData:
 
 
 class TestOrderData:
-    pass
+    ingredients = ["61c0c5a71d1f82001bdaaa6d","61c0c5a71d1f82001bdaaa70"]
+    
+    bad_ingredients = ["0000b41abdacab0026a00000","000046e4dc916e0027600000"]

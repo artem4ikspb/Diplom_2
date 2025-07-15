@@ -9,3 +9,4 @@ class UserEndpoints:
 
 class OrderEndpoints:
     CREATE_ORDER = "POST", "/api/orders"
+    GET_USER_ORDERS = "GET", "/api/orders"
